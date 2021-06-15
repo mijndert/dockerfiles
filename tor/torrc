@@ -1,0 +1,23 @@
+# Start one thread
+NumCPUs 1
+
+# Make data persistent
+DataDirectory /var/lib/tor
+
+# Don't daemonize
+RunAsDaemon 0
+
+# Port number
+ORPort 9001
+
+# Contact information
+Nickname hacktheplanet
+ContactInfo Mijndert Stuij <mijndert+tor@mijndertstuij.nl>
+
+# Do not exit 
+ExitPolicy reject *:*
+
+# Bandwidth control
+AccountingMax 25 GBytes
+AccountingStart day 00:00
+RelayBandwidthRate 1 MBytes
