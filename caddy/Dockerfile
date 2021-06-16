@@ -1,6 +1,6 @@
 FROM alpine:latest as builder 
 
-ARG version=2.2.1
+ARG version=2.4.2
 
 RUN apk --update add --no-cache wget \
     && wget -q https://github.com/caddyserver/caddy/releases/download/v${version}/caddy_${version}_linux_amd64.tar.gz \

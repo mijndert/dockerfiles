@@ -1,6 +1,6 @@
 FROM alpine:latest as builder 
 
-ARG version=3.4.2
+ARG version=3.6.0
 
 RUN apk --update add --no-cache wget \
     && wget -q https://get.helm.sh/helm-v${version}-linux-amd64.tar.gz \

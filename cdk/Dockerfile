@@ -1,6 +1,6 @@
 FROM alpine:3
 
-ENV CDK_VERSION=1.106.1
+ENV CDK_VERSION=1.108.1
 
 RUN apk -v --no-cache --update add \
         nodejs \
