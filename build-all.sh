@@ -20,6 +20,9 @@ do
   cd $d
   echo ${green}building $d${reset}
   docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/mijndert/${d%?}:latest --push .
+  # docker build -t ${d%?} .
+  # docker tag ${d%?}:latest ghcr.io/mijndert/${d%?}:latest
+  # docker push ghcr.io/mijndert/${d%?}:latest
   cd ..
 done
 
