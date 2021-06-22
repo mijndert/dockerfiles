@@ -8,22 +8,29 @@ name: build and push
 
 on:
   workflow_dispatch:
-  
+
 jobs:
-  build:
+  checkout:
     runs-on: ubuntu-latest
-    
     steps:
       - uses: actions/checkout@v2
-      
+  
+  login:
+    needs: checkout
+    runs-on: ubuntu-latest
+    steps:
       - name: Log in to the Container registry
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: build and push all sub-directories
+
+  build-and-push:
+    needs: login
+    runs-on: ubuntu-latest
+    steps:
+      - name: build and push all
         run: |
           for d in */ ; do
             cd $d
@@ -31,3 +38,4 @@ jobs:
             docker tag ${d%?}:latest ghcr.io/mijndert/${d%?}:latest
             docker push ghcr.io/mijndert/${d%?}:latest
           done
+
