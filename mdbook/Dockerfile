@@ -2,8 +2,8 @@
 
 FROM rust:slim
 
-LABEL maintainer = "mijndert@mijndertstuij.nl"
-LABEL org.opencontainers.image.source = "https://github.com/mijndert/dockerfiles" 
+LABEL maintainer Mijndert Stuij "mijndert@mijndertstuij.nl"
+LABEL org.opencontainers.image.source https://github.com/mijndert/dockerfiles
 
 ARG MDBOOK_VERSION="0.4.10"
 

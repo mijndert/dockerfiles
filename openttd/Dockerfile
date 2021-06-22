@@ -1,7 +1,7 @@
 FROM debian:stable-slim
 
-LABEL maintainer = "mijndert@mijndertstuij.nl"
-LABEL org.opencontainers.image.source = "https://github.com/mijndert/dockerfiles" 
+LABEL maintainer Mijndert Stuij "mijndert@mijndertstuij.nl"
+LABEL org.opencontainers.image.source https://github.com/mijndert/dockerfiles
 
 ARG OPENTTD_VERSION="1.11.2"
 ARG OPENGFX_VERSION="0.6.0"
