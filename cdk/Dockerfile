@@ -1,5 +1,8 @@
 FROM alpine:3
 
+LABEL maintainer = "mijndert@mijndertstuij.nl"
+LABEL org.opencontainers.image.source = "https://github.com/mijndert/dockerfiles" 
+
 ENV CDK_VERSION=1.108.1
 
 RUN apk -v --no-cache --update add \

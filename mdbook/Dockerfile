@@ -2,6 +2,9 @@
 
 FROM rust:slim
 
+LABEL maintainer = "mijndert@mijndertstuij.nl"
+LABEL org.opencontainers.image.source = "https://github.com/mijndert/dockerfiles" 
+
 ARG MDBOOK_VERSION="0.4.10"
 
 RUN cargo install mdbook --vers ${MDBOOK_VERSION}

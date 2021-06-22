@@ -1,9 +1,6 @@
-FROM alpine:latest as builder 
-
-RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing packer 
-    
 FROM alpine:latest
 
-LABEL maintainer Mijndert Stuij "mijndert@mijndertstuij.nl"
+LABEL maintainer = "mijndert@mijndertstuij.nl"
+LABEL org.opencontainers.image.source = "https://github.com/mijndert/dockerfiles" 
 
-COPY --from=builder /usr/bin/packer /usr/bin/packer
+RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing packer 

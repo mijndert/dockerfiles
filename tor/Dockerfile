@@ -1,5 +1,8 @@
 FROM alpine:latest
 
+LABEL maintainer = "mijndert@mijndertstuij.nl"
+LABEL org.opencontainers.image.source = "https://github.com/mijndert/dockerfiles" 
+
 RUN apk update \
     && apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/community tor shadow \
     && rm -rf /var/cache/apk/* \
