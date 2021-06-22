@@ -10,13 +10,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  checkout:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-  
+
   login:
-    needs: checkout
     runs-on: ubuntu-latest
     steps:
       - name: Log in to the Container registry
@@ -30,6 +25,7 @@ jobs:
     needs: login
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: build and push all
         run: |
           for d in */ ; do
