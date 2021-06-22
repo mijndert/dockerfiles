@@ -19,7 +19,7 @@ for d in */
 do
 	cd $d
   echo ${green}building $d${reset}
-	docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/mijndert/${d%?}:latest --push .
+  docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/mijndert/${d%?}:latest --push .
   cd ..
 done
 
