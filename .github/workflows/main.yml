@@ -1,0 +1,19 @@
+name: build and push
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: build and push all
+        run: |
+          docker login ghcr.io -u mijndert -p ${{ secrets.GITHUB_TOKEN }}
+          for d in */ ; do
+            cd $d
+            docker build -t ${d%?} .
+            docker tag ${d%?}:latest ghcr.io/mijndert/${d%?}:latest
+            docker push ghcr.io/mijndert/${d%?}:latest
+          done

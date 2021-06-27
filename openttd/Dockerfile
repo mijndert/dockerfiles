@@ -36,8 +36,8 @@ RUN git clone https://github.com/OpenTTD/OpenTTD.git . \
 
 RUN mkdir -p /tmp/build/binary \
     && cd /tmp/build/binary \
-    && cmake .. \
-    && make
+    && cmake -j$(nproc) .. \
+    && make -j$(nproc)
 
 ## Install OpenGFX
 RUN mkdir -p /usr/local/share/games/openttd/baseset/ \

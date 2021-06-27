@@ -10,20 +10,13 @@ read -e token
 
 echo $token | docker login ghcr.io -u mijndert --password-stdin
 
-export DOCKER_CLI_EXPERIMENTAL=enabled
-
-docker buildx create --name builder
-docker buildx inspect --bootstrap
-
 for d in */
 do
   cd $d
   echo ${green}building $d${reset}
-  docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/mijndert/${d%?}:latest --push .
-  # docker build -t ${d%?} .
-  # docker tag ${d%?}:latest ghcr.io/mijndert/${d%?}:latest
-  # docker push ghcr.io/mijndert/${d%?}:latest
+  docker build -t ${d%?} .
+  docker tag ${d%?}:latest ghcr.io/mijndert/${d%?}:latest
+  docker push ghcr.io/mijndert/${d%?}:latest
   cd ..
 done
 
-docker buildx rm builder
