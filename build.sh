@@ -15,6 +15,6 @@ read -e image
 
 cd $image
 echo ${green}building $image${reset}
-docker build -t ${image%?} .
-docker tag ${image%?}:latest ghcr.io/mijndert/${image%?}:latest
-docker push ghcr.io/mijndert/${image%?}:latest
+docker build -t ${image} .
+docker tag ${image}:latest ghcr.io/mijndert/${image}:latest
+docker push ghcr.io/mijndert/${image}:latest
