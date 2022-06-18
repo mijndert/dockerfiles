@@ -1,9 +1,9 @@
-FROM alpine:3
+FROM alpine:latest
 
 LABEL maintainer Mijndert Stuij "mijndert@mijndertstuij.nl"
 LABEL org.opencontainers.image.source https://github.com/mijndert/dockerfiles
 
-ENV CDK_VERSION=1.125.0
+ENV CDK_VERSION=2.28.1
 
 RUN apk -v --no-cache --update add \
         nodejs \

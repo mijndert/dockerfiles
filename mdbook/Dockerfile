@@ -5,7 +5,7 @@ FROM rust:slim
 LABEL maintainer Mijndert Stuij "mijndert@mijndertstuij.nl"
 LABEL org.opencontainers.image.source https://github.com/mijndert/dockerfiles
 
-ARG MDBOOK_VERSION="0.4.13"
+ARG MDBOOK_VERSION="0.4.18"
 
 RUN cargo install mdbook --vers ${MDBOOK_VERSION}
 

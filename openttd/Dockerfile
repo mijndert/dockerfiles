@@ -3,7 +3,7 @@ FROM debian:stable-slim
 LABEL maintainer Mijndert Stuij "mijndert@mijndertstuij.nl"
 LABEL org.opencontainers.image.source https://github.com/mijndert/dockerfiles
 
-ARG OPENTTD_VERSION="12.0"
+ARG OPENTTD_VERSION="12.1"
 ARG OPENGFX_VERSION="7.1"
 
 # Get things ready

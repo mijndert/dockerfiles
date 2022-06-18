@@ -8,6 +8,8 @@ ENV NODE_ENV production
 ENV THELOUNGE_HOME "/var/opt/thelounge"
 VOLUME "${THELOUNGE_HOME}"
 
+RUN apk add --no-cache git
+
 RUN yarn global add thelounge@ \
     && yarn cache clean
 
