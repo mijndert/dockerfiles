@@ -14,8 +14,8 @@ LASTAUTOSAVE=$(ls --sort=time ${DATADIR}/save/autosave/ | tail -n 1)
 if [ -z "$LASTAUTOSAVE" ];
 then
     echo "Couldn't find an autosave, starting new game"
-    sudo -u openttd /usr/local/bin/openttd -D
+    sudo -u openttd /usr/local/games/openttd -D
 else
     echo "Starting from last autosave"
-    sudo -u openttd /usr/local/bin/openttd -D -g ${DATADIR}/save/autosave/$LASTAUTOSAVE
+    sudo -u openttd /usr/local/games/openttd -D -g ${DATADIR}/save/autosave/$LASTAUTOSAVE
 fi
