@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  openttd:
+    image: ghcr.io/mijndert/openttd:latest
+    container_name: openttd
+    environment:
+      - TZ=Europe/Amsterdam
+      - PUID=1026
+      - PGID=100
+    ports:
+      - "3979:3979/tcp"
+      - "3979:3979/udp"
+    volumes:
+      - ~/openttd-data:/config:rw
+    restart: always
