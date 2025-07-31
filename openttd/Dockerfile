@@ -1,9 +1,9 @@
 FROM debian:stable-slim
 
-LABEL maintainer Mijndert Stuij "mijndert@mijndertstuij.nl"
-LABEL org.opencontainers.image.source https://github.com/mijndert/dockerfiles
+LABEL maintainer="Mijndert Stuij <mijndert@mijndertstuij.nl>"
+LABEL org.opencontainers.image.source="https://github.com/mijndert/dockerfiles"
 
-ARG OPENTTD_VERSION="12.2"
+ARG OPENTTD_VERSION="14.1"
 ARG OPENGFX_VERSION="7.1"
 
 # Get things ready
@@ -36,8 +36,8 @@ RUN git clone https://github.com/OpenTTD/OpenTTD.git . \
 
 RUN mkdir -p /tmp/build/binary \
     && cd /tmp/build/binary \
-    && cmake -j$(nproc) .. \
-    && make -j$(nproc)
+    && cmake .. \
+    && make -j $(nproc)
 
 ## Install OpenGFX
 RUN mkdir -p /usr/local/share/games/openttd/baseset/ \
