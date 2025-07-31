@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   openttd:
     image: ghcr.io/mijndert/openttd:latest
